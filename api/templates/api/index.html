@@ -1,0 +1,26 @@
+{% extends 'api/base.html' %}
+
+{% block title %}
+Disease Table
+{% endblock %}
+
+{% block content %}
+
+<h1>Diseases</h1>
+
+<br>
+{% for item in dis %}
+<br>
+<div class="card">
+  <div class="card-header">Disease code: {{ item.disease_code }}</div>
+  <div class="card-body">
+    <h5 class="card-title">Pathogen: {{ item.pathogen }}</h5>
+    <p class="card-text">Description: {{ item.description }}</p>
+    <a href="{{ item.get_UpdateUrl }}" class="btn btn-primary">Update</a>
+    <a href="{{ item.get_DeleteUrl }}" class="btn btn-danger">Delete</a>
+  </div>
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}

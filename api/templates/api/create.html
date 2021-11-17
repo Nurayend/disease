@@ -1,0 +1,25 @@
+{% extends 'api/base.html' %}
+
+{% block title %}
+Add Disease
+{% endblock %}
+
+{% block content %}
+
+<h1>Disease</h1>
+<br>
+
+<form action="{% url 'create' %}" method="post">
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="form-group col-md-8">
+    {{ field.label }}{{ field }}
+  </div>
+  {% endfor %}
+  <div class="form-group col-md-6">
+    <button type="submit" class="btn btn-success">Сохранить</button>
+  </div>
+</form>
+
+{% endblock %}
+

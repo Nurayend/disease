@@ -1,0 +1,26 @@
+{% extends 'api/base.html' %}
+
+{% block title %}
+Delete Disease
+{% endblock %}
+
+{% block content %}
+
+<h1>Disease</h1>
+<br>
+
+<form action="{{ dis.get_DeleteUrl }}" method="post">
+  {% csrf_token %}
+  <br>
+  <h3> Are you sure? </h3>
+  <br>
+  <a href="{% url 'home' %}">Cancel</a>
+  <br>
+  <div class="d-grid gap-2 d-md-flex justify-content-md">
+    <button type="submit" class="btn btn-primary">Confirm</button>
+  </div>
+  <br>
+</form>
+<br>
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% extends 'api/base.html' %}
+
+{% block title %}
+Update Disease
+{% endblock %}
+
+{% block content %}
+
+<h1>Disease</h1>
+<br>
+
+<form action="{{ dis.get_UpdateUrl }}" method="post">
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="form-group col-md-8">
+    {{ field.label }}{{ field }}
+  </div>
+  {% endfor %}
+  <div class="form-group col-md-6">
+    <button type="submit" class="btn btn-success">Save</button>
+  </div>
+</form>
+
+
+{% endblock %}
